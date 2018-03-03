@@ -6,6 +6,10 @@ final class CapitalizedString
 
     public function __construct(string $string)
     {
+        if (empty($string)) {
+            throw new InvalidArgumentException('An empty string cannot be capitalized.');
+        }
+
         $this->string = $string;
     }
 
