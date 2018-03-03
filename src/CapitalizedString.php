@@ -10,6 +10,10 @@ final class CapitalizedString
             throw new InvalidArgumentException('An empty string cannot be capitalized.');
         }
 
+        if (! ctype_upper($string[0])) {
+            throw new InvalidArgumentException("The string '{$string}' is not capitalized.");
+        }
+
         $this->string = $string;
     }
 

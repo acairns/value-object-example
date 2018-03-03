@@ -10,4 +10,11 @@ class CapitalizedStringTest extends TestCase
 
         new CapitalizedString('');
     }
+
+    public function test_it_can_not_start_with_a_number()
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        new CapitalizedString('0Foo');
+    }
 }
