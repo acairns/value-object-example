@@ -27,4 +27,12 @@ class CapitalizedStringTest extends TestCase
 
         new CapitalizedString('fOO');
     }
+
+    public function test_an_emoji_is_not_a_capital()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("The string '👋' is not capitalized");
+
+        new CapitalizedString('👋');
+    }
 }
