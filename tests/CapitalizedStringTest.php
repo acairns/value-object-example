@@ -35,4 +35,21 @@ class CapitalizedStringTest extends TestCase
 
         new CapitalizedString('👋');
     }
+
+    public function test_it_can_detect_capitalization_of_greek_characters()
+    {
+        $hello = "Χαίρετε";
+
+        $this->assertEquals($hello, new CapitalizedString($hello));
+    }
+
+    public function test_the_first_character_in_greek_must_be_a_capital_too()
+    {
+        $hello = "xαίρετε";
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("The string '{$hello}' is not capitalized");
+
+        new CapitalizedString($hello);
+    }
 }
