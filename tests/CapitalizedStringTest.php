@@ -52,4 +52,12 @@ class CapitalizedStringTest extends TestCase
 
         new CapitalizedString($hello);
     }
+
+    public function test_the_string_can_not_begin_with_an_underscore()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("The string '_foo' is not capitalized");
+
+        new CapitalizedString('_foo');
+    }
 }
