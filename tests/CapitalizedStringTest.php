@@ -38,19 +38,19 @@ class CapitalizedStringTest extends TestCase
 
     public function test_it_can_detect_capitalization_of_greek_characters()
     {
-        $hello = "Χαίρετε";
+        $string = "Χαίρετε";
 
-        $this->assertEquals($hello, new CapitalizedString($hello));
+        $this->assertEquals($string, new CapitalizedString($string));
     }
 
     public function test_the_first_character_in_greek_must_be_a_capital_too()
     {
-        $hello = "xαίρετε";
+        $string = "xαίρετε";
 
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("The string '{$hello}' is not capitalized");
+        $this->expectExceptionMessage("The string '{$string}' is not capitalized");
 
-        new CapitalizedString($hello);
+        new CapitalizedString($string);
     }
 
     public function test_the_string_can_not_begin_with_an_underscore()
@@ -59,5 +59,12 @@ class CapitalizedStringTest extends TestCase
         $this->expectExceptionMessage("The string '_foo' is not capitalized");
 
         new CapitalizedString('_foo');
+    }
+
+    public function test_it_allows_capital_letters_in_russian()
+    {
+        $string = 'Пушкин';
+
+        $this->assertEquals($string, new CapitalizedString($string));
     }
 }
