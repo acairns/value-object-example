@@ -18,6 +18,8 @@ The `CapitalizedString` Value Object demonstrates how business invariants can be
 encapsulated and protected within a class.
 
 ```php
-$string = new CapitalizedString('foo'); // throws InvalidArgumentException
-```
+new CapitalizedString(''); // throws InvalidArgumentException
+new CapitalizedString('foo'); // throws InvalidArgumentException
 
+new CapitalizedString('Bar'); // 👍
+```
