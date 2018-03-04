@@ -23,3 +23,9 @@ new CapitalizedString('foo'); // throws InvalidArgumentException
 
 new CapitalizedString('Bar'); // 👍
 ```
+
+## More
+
+Additional reading on Value Objects:
+- https://martinfowler.com/bliki/ValueObject.html
+
