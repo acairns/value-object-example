@@ -2,6 +2,9 @@
 
 final class CapitalizedString
 {
+    /**
+     * @var string
+     */
     private $string;
 
     public function __construct(string $string)
