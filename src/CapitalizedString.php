@@ -17,6 +17,11 @@ final class CapitalizedString
         $this->string = $string;
     }
 
+    public function length(): int
+    {
+        return strlen($this->string);
+    }
+
     public function __toString(): string
     {
         return $this->string;

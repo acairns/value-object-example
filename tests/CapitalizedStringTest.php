@@ -67,4 +67,11 @@ class CapitalizedStringTest extends TestCase
 
         $this->assertEquals($string, new CapitalizedString($string));
     }
+
+    public function test_it_knows_the_length_of_the_string()
+    {
+        $string = new CapitalizedString('Foo');
+
+        $this->assertEquals(3, $string->length());
+    }
 }
